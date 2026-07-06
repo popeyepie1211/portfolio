@@ -1,15 +1,27 @@
-import { portfolio } from "../src/data/portfolio.js";
 import {
   sendOwnerNotification,
   sendThankYouReply,
   validateContactSubmission,
 } from "../src/lib/contactEmail.js";
 import { env } from "node:process";
+import type { IncomingMessage, ServerResponse } from "node:http";
+
+type ContactRequest = IncomingMessage & {
+  body?: unknown;
+};
+
+type ContactResponse = ServerResponse;
 
 const RESEND_API_KEY = env.RESEND_API_KEY;
 const RESEND_FROM_EMAIL = env.RESEND_FROM_EMAIL ?? "Arya Shewale <onboarding@resend.dev>";
+const OWNER_EMAIL = "aryashewale18@gmail.com";
+const SITE_NAME = "Arya Shewale";
 
-function sendJson(response: any, statusCode: number, body: Record<string, unknown>): void {
+function sendJson(
+  response: ContactResponse,
+  statusCode: number,
+  body: Record<string, unknown>,
+): void {
   response.statusCode = statusCode;
   response.setHeader("Content-Type", "application/json");
   response.end(JSON.stringify(body));
@@ -23,7 +35,7 @@ function parseBody(body: unknown): unknown {
   return body ?? {};
 }
 
-export default async function handler(request: any, response: any) {
+export default async function handler(request: ContactRequest, response: ContactResponse) {
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
     return sendJson(response, 405, { ok: false, message: "Method not allowed." });
@@ -56,8 +68,8 @@ export default async function handler(request: any, response: any) {
       {
         apiKey: RESEND_API_KEY,
         from: RESEND_FROM_EMAIL,
-        ownerEmail: portfolio.contact.email,
-        siteName: portfolio.name,
+        ownerEmail: OWNER_EMAIL,
+        siteName: SITE_NAME,
       },
       validation.submission,
     );
@@ -69,8 +81,8 @@ export default async function handler(request: any, response: any) {
         {
           apiKey: RESEND_API_KEY,
           from: RESEND_FROM_EMAIL,
-          ownerEmail: portfolio.contact.email,
-          siteName: portfolio.name,
+          ownerEmail: OWNER_EMAIL,
+          siteName: SITE_NAME,
         },
         validation.submission,
       );
