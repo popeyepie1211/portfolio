@@ -3,17 +3,24 @@ import {
   sendThankYouReply,
   validateContactSubmission,
 } from "../src/lib/contactEmail.js";
-import { env } from "node:process";
-import type { IncomingMessage, ServerResponse } from "node:http";
+type HeaderValue = number | string | readonly string[];
 
-type ContactRequest = IncomingMessage & {
+type ContactRequest = {
+  method?: string;
   body?: unknown;
 };
 
-type ContactResponse = ServerResponse;
+type ContactResponse = {
+  statusCode: number;
+  setHeader(name: string, value: HeaderValue): void;
+  end(body?: string): void;
+};
 
-const RESEND_API_KEY = env.RESEND_API_KEY;
-const RESEND_FROM_EMAIL = env.RESEND_FROM_EMAIL ?? "Arya Shewale <onboarding@resend.dev>";
+const serverEnv =
+  (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env ?? {};
+
+const RESEND_API_KEY = serverEnv.RESEND_API_KEY;
+const RESEND_FROM_EMAIL = serverEnv.RESEND_FROM_EMAIL ?? "Arya Shewale <onboarding@resend.dev>";
 const OWNER_EMAIL = "aryashewale18@gmail.com";
 const SITE_NAME = "Arya Shewale";
 
