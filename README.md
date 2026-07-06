@@ -30,3 +30,26 @@ If you are developing a production application, we recommend enabling type-aware
 ```
 
 See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+
+## Contact form email setup
+
+The contact form now posts to `/api/contact` and sends two emails through Resend: one to the portfolio inbox and one automatic thank-you reply to the visitor.
+
+### Environment variables
+
+Set these before running in development or deploying to Vercel:
+
+- `RESEND_API_KEY` - your Resend API key.
+- `RESEND_FROM_EMAIL` - a verified sender such as `Arya Shewale <onboarding@resend.dev>` or your own verified domain sender.
+
+For local development, create a `.env.local` file by copying `.env.example` and filling in the values.
+
+### Local development
+
+The Vite dev server includes a lightweight `/api/contact` handler so the form can be tested locally with `npm run dev`.
+
+### Deployment
+
+1. Add the environment variables in your Vercel project settings.
+2. Verify the `RESEND_FROM_EMAIL` sender in Resend if you are not using the default onboarding sender.
+3. Deploy the site and submit the contact form once to confirm both emails arrive.

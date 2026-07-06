@@ -20,7 +20,7 @@ export function AnimatedInput({ label, className, id, ...props }: AnimatedInputP
           id={inputId}
           className={cn(
             "w-full rounded-xl bg-white/[0.04] px-4 py-3.5 text-foreground placeholder:text-muted/50 focus-ring",
-            "border border-white/10 transition-colors focus:border-transparent",
+            "border border-white/10 transition-colors focus:border-transparent disabled:cursor-not-allowed disabled:opacity-60",
             className,
           )}
           onFocus={() => setFocused(true)}
@@ -69,7 +69,7 @@ export function AnimatedTextarea({ label, className, id, ...props }: AnimatedTex
           id={inputId}
           className={cn(
             "min-h-[140px] w-full resize-none rounded-xl bg-white/[0.04] px-4 py-3.5 text-foreground placeholder:text-muted/50 focus-ring",
-            "border border-white/10 transition-colors focus:border-transparent",
+            "border border-white/10 transition-colors focus:border-transparent disabled:cursor-not-allowed disabled:opacity-60",
             className,
           )}
           onFocus={() => setFocused(true)}
