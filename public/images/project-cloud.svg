@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="aws" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9900"/>
+      <stop offset="100%" stop-color="#c7f200"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="#13131a"/>
+  <text x="400" y="40" text-anchor="middle" fill="#c7f200" font-family="monospace" font-size="14">AWS Self-Healing Platform</text>
+  <rect x="80" y="80" width="120" height="80" rx="8" fill="#1a1a24" stroke="#FF9900" stroke-width="1"/>
+  <text x="140" y="125" text-anchor="middle" fill="#a1a1aa" font-size="12">Route53</text>
+  <rect x="340" y="60" width="120" height="80" rx="8" fill="#1a1a24" stroke="#22d3ee" stroke-width="1"/>
+  <text x="400" y="105" text-anchor="middle" fill="#a1a1aa" font-size="12">ALB</text>
+  <rect x="600" y="80" width="120" height="80" rx="8" fill="#1a1a24" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="660" y="125" text-anchor="middle" fill="#a1a1aa" font-size="12">Lambda</text>
+  <rect x="200" y="220" width="400" height="120" rx="8" fill="#1a1a24" stroke="url(#aws)" stroke-width="1"/>
+  <text x="400" y="275" text-anchor="middle" fill="#c7f200" font-size="16" font-weight="bold">React Dashboard</text>
+  <text x="400" y="300" text-anchor="middle" fill="#a1a1aa" font-size="11">Live Failover · Chaos Controls</text>
+  <line x1="200" y1="100" x2="340" y2="100" stroke="#c7f200" stroke-width="1" opacity="0.4"/>
+  <line x1="460" y1="100" x2="600" y2="100" stroke="#c7f200" stroke-width="1" opacity="0.4"/>
+  <line x1="400" y1="140" x2="400" y2="220" stroke="#c7f200" stroke-width="1" opacity="0.4"/>
+</svg>

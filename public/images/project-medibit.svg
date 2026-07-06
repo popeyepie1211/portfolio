@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#13131a"/>
+  <text x="400" y="40" text-anchor="middle" fill="#c7f200" font-family="monospace" font-size="14">MediBit Healthcare</text>
+  <rect x="120" y="80" width="250" height="320" rx="12" fill="#1a1a24" stroke="#22d3ee" stroke-width="1"/>
+  <text x="245" y="120" text-anchor="middle" fill="#f4f4f5" font-size="14" font-weight="bold">Book Appointment</text>
+  <rect x="150" y="150" width="190" height="36" rx="8" fill="#2a2a35"/>
+  <rect x="150" y="200" width="190" height="36" rx="8" fill="#2a2a35"/>
+  <rect x="150" y="260" width="190" height="40" rx="20" fill="#c7f200"/>
+  <text x="245" y="285" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">Confirm</text>
+  <rect x="430" y="80" width="250" height="150" rx="12" fill="#1a1a24" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="555" y="130" text-anchor="middle" fill="#a1a1aa" font-size="11">Vonage Video Call</text>
+  <circle cx="555" cy="170" r="30" fill="#8b5cf6" opacity="0.3"/>
+  <rect x="430" y="260" width="250" height="80" rx="12" fill="#1a1a24"/>
+  <text x="555" y="305" text-anchor="middle" fill="#c7f200" font-size="11">Clerk Auth </text>
+</svg>

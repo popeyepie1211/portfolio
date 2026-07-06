@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="p4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="50%" stop-color="#c7f200"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="#13131a"/>
+  <rect x="150" y="100" width="500" height="300" rx="20" fill="#1a1a24" stroke="url(#p4)" stroke-width="1"/>
+  <rect x="200" y="160" width="400" height="40" rx="8" fill="#2a2a35"/>
+  <rect x="200" y="220" width="400" height="40" rx="8" fill="#2a2a35"/>
+  <rect x="300" y="300" width="200" height="50" rx="25" fill="url(#p4)" opacity="0.6"/>
+  <text x="400" y="460" text-anchor="middle" fill="#c7f200" font-family="sans-serif" font-size="24" font-weight="bold">FLOW</text>
+</svg>
