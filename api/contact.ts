@@ -4,9 +4,10 @@ import {
   sendThankYouReply,
   validateContactSubmission,
 } from "../src/lib/contactEmail.js";
+import { env } from "node:process";
 
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "Arya Shewale <onboarding@resend.dev>";
+const RESEND_API_KEY = env.RESEND_API_KEY;
+const RESEND_FROM_EMAIL = env.RESEND_FROM_EMAIL ?? "Arya Shewale <onboarding@resend.dev>";
 
 function sendJson(response: any, statusCode: number, body: Record<string, unknown>): void {
   response.statusCode = statusCode;
@@ -42,7 +43,7 @@ export default async function handler(request: any, response: any) {
 
   const validation = validateContactSubmission(body);
 
-  if (!validation.ok) {
+  if (validation.ok === false) {
     return sendJson(response, 400, { ok: false, message: validation.message });
   }
 
